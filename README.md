@@ -1,4 +1,4 @@
-# Spark connect to MySQL(BO)
+# Spark connect to MySQL
 
 PySpark
 
