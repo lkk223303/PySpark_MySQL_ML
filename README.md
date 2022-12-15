@@ -345,28 +345,7 @@ sudo apt install libopenblas-base
 
 ![螢幕擷取畫面 2022-12-15 144819.png](Spark%20connect%20to%20MySQL(BO)%20e60b19fa927241fca7eec65f40807fbe/%25E8%259E%25A2%25E5%25B9%2595%25E6%2593%25B7%25E5%258F%2596%25E7%2595%25AB%25E9%259D%25A2_2022-12-15_144819.png)
 
-接著可以把BinaryClassificationEvaluator 評估的結果印出來看
 
-```python
-lr = LogisticRegression(labelCol="is_red",featuresCol="features")
-# lr_model = lr.fit(vec_train_df)
-# vec_test_df = vec_assembler.transform(test_df)
-# predictions1 = lr_model.transform(vec_test_df)
-
-pipeline = Pipeline(stages=[vec_assembler,lr])
-pipeline_model = pipeline.fit(train_df)
-predictions = pipeline_model.transform(test_df)
-
-evaluator =  BinaryClassificationEvaluator(labelCol="is_red")
-eval_result = evaluator.evaluate(predictions)
-
-# eval_result1 = evaluator.evaluate(predictions1)
-print("show predictions")
-predictions.show()
-
-print("show evaluation results")
-print(eval_result)
-```
 
 ## 使用 container 的方式安裝 Apache Spark / pySpark 與 MySQL
 
